@@ -1,0 +1,8 @@
+
+import xlrd
+archivo = "C:\\Users\\ADMIN\Desktop\\Proyecto Final\\DETALLE DE VEHICULOS.xls"
+wb = xlrd.open_workbook(archivo)
+hoja = wb.sheet_by_index(0)
+print(hoja.nrows)
+print(hoja.ncols)
+print(hoja.cell_value(0,0))
