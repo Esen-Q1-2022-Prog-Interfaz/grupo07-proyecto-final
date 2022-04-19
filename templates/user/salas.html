@@ -1,0 +1,48 @@
+<!--TERCERA PANTALLA DE USUARIO DEPENDIENDO DE LO QUE ELIJA AL DARLE SUBMIT SE VA A CONFIRMACION-->
+
+
+{% extends 'base.html' %}
+{% block title %}Reservar Sala{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+{% block contents %}
+
+<center>
+<h2>Salas</h2>
+<br>
+<span><b>Usuario actual:</b>   {{solicitante}}</span>
+<br>
+<p>Por favor insertar tu solicitud de sala aquí:</p>
+<br>
+
+<div class="salareserva_form">
+    <form action="{{ url_for('usersalas.createSalaReserve', month = month, day = day, year = year) }}" method="post">
+        {{ form.hidden_tag() }}
+        
+
+        <div class="idsala">
+            {{ form.idSala.label }}
+            {{ form.idSala }} 
+        </div>
+       
+        <div class="horainicio">
+            {{ form.horaInicio.label }}
+            {{ form.horaInicio }}
+        </div>
+       
+        <div class="horafinal">
+            {{ form.horaFinal.label }}
+            {{ form.horaFinal }}
+        </div>
+        
+
+        <div class="submit">
+            {{ form.submit }}
+        </div>
+        
+    </form>
+</div>
+
+
+</center>
+{%endblock%}

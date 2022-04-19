@@ -1,0 +1,58 @@
+<!--PRIMERA PANTALLA DE USUARIO EN LA QUE HARA RESERVA SE VA A DESICION.HTML-->
+
+{% extends 'base.html' %}
+{% block title %}Calendario de reservas FANTEL{% endblock %}
+
+{% block contents %}
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/userCalendarStyle.css') }}">
+
+
+<body>
+  <center>
+    <div id="container">
+      <div id="header">
+        <div id="monthDisplay"></div>
+        <div>
+          <button id="backButton">Anterior</button>
+          <button id="nextButton">Siguiente</button>
+        </div>
+      </div>
+
+      <div id="weekdays">
+        <div>Domingo</div>
+        <div>Lunes</div>
+        <div>Martes</div>
+        <div>Miércoles</div>
+        <div>Jueves</div>
+        <div>Viernes</div>
+        <div>Sábado</div>
+      </div>
+
+      <div id="calendar"></div>
+    </div>
+    <br>
+    {% if current_user.rank == 'admin' %}
+    <div class="boton1-cell">
+      <a class="Dash backdash hoverdash" href="{{ url_for('admin.dashboard') }}">Volver al Dashboard</a><br>
+   </div>
+
+    {% else %}
+    <div class="boton1-cell">
+      <a class="Dash backdash hoverdash" href="{{ url_for('usuarios.home') }}">Volver al inicio</a><br>
+    </div>
+
+    {% endif %}
+
+    </br>
+
+    <script src="/static/js/userCalendarScript.js"></script>
+  </center>
+</body>
+<center>
+  <div class = "cerrarcal">
+    <a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a>
+  </div>
+</center>
+{% endblock %}

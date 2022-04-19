@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+*{
+  font-family: Raleway;
+}
+
+body {
+    margin-top: 50px;
+    justify-content: center;
+    align-self: center;
+  }
+
+button {
+    width: 100px;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-family : Raleway;
+    font-size: 20px;
+    border-radius: 20px;
+    transition: 0.5s;
+  }
+  
+  #header {
+    padding: 10px;
+    color: #323945;
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+  }
+  #header button {
+    background-color:#323945;
+  }
+  #container {
+    width: 770px;
+  }
+
+  #monthDisplay{
+    text-transform:capitalize;
+    font-weight: bold;
+  }
+
+  #weekdays {
+    width: 100%;
+    display: flex;
+    color: #323945;
+  }
+  #weekdays div {
+    width: 100px;
+    padding: 10px;
+  }
+  #calendar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .day {
+    width: 100px;
+    padding: 10px;
+    height: 100px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 5px;
+    box-shadow: 0px 0px 3px #CBD4C2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .day:hover {
+    background-color: rgba(144, 158, 184, 0.397);
+  }
+  
+  .day + #currentDay {
+    background-color: rgba(144, 158, 184, 0.74);
+  }
+
+  .padding {
+    cursor: default !important;
+    background-color: #FFFCFF !important;
+    box-shadow: none !important;
+  }
+
+  #backButton:hover {
+    cursor: pointer;
+    background-color: #323945a9;
+  }
+
+  #nextButton:hover {
+    cursor: pointer;
+    background-color: #323945a9;
+  }
+
+  #Dash-backdash a:hover {
+    cursor: pointer;
+    background-color: #323945a9;
+  }
+
+  .hoverdash:hover {
+    width: 450px;
+    background-color: #323945a9;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 30px;
+  }

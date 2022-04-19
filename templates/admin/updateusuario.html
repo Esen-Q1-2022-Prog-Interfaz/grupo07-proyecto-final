@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% block title %}Actualizar datos{% endblock %}
+{% block contents %}
+
+<center>
+    <h2>Actualizar usuario</h2>
+    <div class="userform">
+        <form action="{{ url_for('users.update', id=id) }}" method="post">
+        {{ form.hidden_tag() }}
+    
+        <div class="username">
+            {{ form.username.label }}
+            {{ form.username }}
+        </div>
+    
+        <div class="password">     
+            {{ form.password.label }}
+            {{ form.password }} 
+        </div>
+        
+        <div class="email">
+            {{ form.email.label }}
+            {{ form.email }}
+        </div>
+    
+        <div class="rank">
+            {{ form.rank.label }}
+            {{ form.rank }}
+        </div>
+    
+        <div class="submit">
+            {{ form.submit }}
+        </div>
+    
+        </form>
+    </div>
+</center>
+{% endblock %}

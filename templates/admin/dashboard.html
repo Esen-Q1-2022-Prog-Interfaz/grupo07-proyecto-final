@@ -1,0 +1,23 @@
+<!--PRIMERA PANTALLA DE ADMIN CADA BOTON SE VA A SU HTML-->
+
+
+{% extends 'base.html' %}
+{% block title %}Administración{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% block contents %}
+<h1>Menú</h1>
+<center>
+<div class = "navegacion">
+        <ul>
+                <a href="{{ url_for('admin.calendario') }}"><li>Calendario</li></a><br>
+                <a href="{{ url_for('solicitudes.vista') }}"><li>Solicitudes</li></a><br>
+                <a href="{{ url_for('users.home') }}"><li>Usuarios</li></a><br>
+                <a href="{{ url_for('salas.home') }}"><li>Salas</li></a><br>
+        </ul> 
+</div>
+
+<div class = "cerrar">
+        <a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a>
+</div>
+</center>
+{% endblock %}

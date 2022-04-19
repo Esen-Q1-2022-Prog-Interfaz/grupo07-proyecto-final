@@ -1,0 +1,29 @@
+<!--ULTIMA PANTALLA DE USUARIO PARA DECIRLE QUE SU RESERVA YA ESTUVO HECHA-->
+
+{% extends 'base.html' %}
+
+{% block title %}Confirmación{% endblock %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="https://kit.fontawesome.com/e7690f1b29.js" crossorigin="anonymous"></script>
+
+{% block contents %}
+
+<div class="mensaje">
+    <center>
+        <h1 class="conf">Espera tu confirmación</h1>
+        <div class="mail">
+            <i class="fa-solid fa-envelope-circle-check"></i>
+        </div>
+    </center>
+</div>
+
+<br>
+
+<center>
+    <div class = "cerrarcal">
+      <a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a>
+    </div>
+  </center>
+
+{% endblock %}

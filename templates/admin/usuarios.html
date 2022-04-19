@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block title %}Usuarios{% endblock %}
+{% block contents %}
+
+<center>
+
+<h2>Usuario</h2>
+
+<h1>Crear Usuario</h1>
+
+<h2>Crear Usuario:</h2>
+<br>
+<div class="userform">
+    <form action="{{ url_for('users.home') }}" method="post">
+    {{ form.hidden_tag() }}
+
+    <div class="username">
+        {{ form.username.label }}
+        {{ form.username }}
+    </div>
+
+    <div class="password">     
+        {{ form.password.label }}
+        {{ form.password }} 
+    </div>
+    
+    <div class="email">
+        {{ form.email.label }}
+        {{ form.email }}
+    </div>
+
+    <div class="rank">
+        {{ form.rank.label }}
+        {{ form.rank }}
+    </div>
+
+    <div class="submit">
+        {{ form.submit }}
+    </div>
+
+    </form>
+</div>
+</center>
+<br>
+<center>
+    <h2 class="tablas">Usuarios existentes</h2>
+    
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre de Usuario</th>
+                <th>Contraseña</th>
+                <th>Correo Electrónico</th>
+                <th>Rank</th>
+                <th colspan="3">Opciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.username }}</td>
+                <td>{{ item.password }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.rank }}</td>
+                <td class="boton1-cell"><a class="b01 boton1" href="{{ url_for('users.delete', id=item.id)}}">Borrar</td></a>
+                <td class="boton1-cell"><a class="b02 boton2" href="{{ url_for('users.update', id=item.id)}}">Modificar</a></td>
+                <td class="boton1-cell"><a class="b02 boton2" href="{{ url_for('solicitudes.vistaPorUser', solicitante=item.username)}}">Solicitudes</a></td>         
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+    <br>
+    <div class="boton1-cell">
+        <a class="Dash backdash hoverdash" href="{{ url_for('admin.dashboard') }}">Volver al Dashboard</a><br>
+    </div>
+    <br>
+</center>
+<center>
+    <div class = "cerrarcal">
+    <a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a>
+    </div>
+</center>
+
+{% endblock %}

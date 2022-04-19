@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}SOLICITUD{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% block contents %}
+
+<br>
+Solicitante: {{ item.solicitante }}
+<br>
+<br>
+<br>
+<br>
+Fecha de la solicitud: {{ item.fecha }}
+<br>
+<br>
+<br>
+<br>
+Hora de inicio solicitada: {{ item.horaInicio }}
+<br>
+<br>
+<br>
+<br>
+Hora de finalización solicitada: {{ item.horaFinal }}
+<br>
+<br>
+<br>
+<br>
+Estado de la solicitud:  {{ item.estado }}
+<br>
+<br>
+<br>
+<br>
+<button class = "print" onclick="window.print()">Imprimir solicitud</button>
+
+
+
+
+
+
+
+{% endblock %}

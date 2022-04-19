@@ -1,0 +1,509 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+/* Base htmlt */
+* {
+    margin: 0;
+    padding: 0;
+    font-family:  Raleway;
+
+}
+.login {
+    height: 88.6vh;
+    width: 100%;
+    background-color: #323945;
+}
+
+.error-displayer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#error{
+    color: black;
+    text-align: center;
+}
+
+h1{
+    color: white; 
+}
+
+h2{
+    color: #323945;   
+}
+
+p{
+    color: #323945;   
+}
+
+.cuadrologin{
+    background-color:  #323945;
+    padding-top: 100px;
+}
+
+.user .e{
+    color: white;
+    font-size: 100px;
+    padding: 20px;
+
+}
+
+/* Formularios */
+
+
+.login form{
+    margin:0;
+    font-family: Raleway;
+    font-size: 20px;
+    color: white;
+    
+}
+
+.login_form .username {
+    padding: 10px;
+}
+
+.login_form .password {
+    padding: 10px;
+}
+
+.login_form form input{
+    width: 20%;
+    padding: 0.5em;
+    border: none;
+    background: none;
+    outline: none;
+    padding-top: 20px;
+    justify-content: center;
+    
+}
+
+button, input, select, textarea {
+    font-family : Raleway;
+    font-size: 20px;
+}
+
+.submit {
+    width: 420px;
+    background-color: white;
+    border-radius: 10px;
+    color:#323945;
+    cursor: pointer;
+}
+
+#submit {
+    width: 100%;
+    cursor: pointer;
+}
+
+
+/* Logos */
+
+.logos{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: white;
+}
+
+.logos .image .primera{
+    width: 110px;
+    height: 50px;
+}
+
+
+.logos .imagen2 .segunda{
+    width: 110px;
+    height: 50px;
+}
+
+
+
+/* Mensaje de confirmación */
+.mensaje .conf{
+    color: #323945;
+    margin-top: 250px;
+    font-family: Raleway;
+    font-size: 50px;
+}
+
+.mail{
+    color:#323945;
+    font-size: 150px;
+}
+
+.menu{
+    color: black;
+    font-size: 20px;
+}
+
+
+
+/* tablas */
+
+h2{
+    color: #323945;
+    padding: 10px;
+    font-family: Raleway; 
+}
+
+.tablas {
+    color: #323945;
+    padding: 20px;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    font-family: Raleway;
+    width: 500px;
+}
+
+th{
+    color: white;
+    font-family: Raleway;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+    background-color: #323945;
+    border: 0.5px solid;
+    border-color: black;
+}
+
+/*centrar los elementos de la tabla*/
+td{
+    padding: 10px;
+    font-size: 14px;
+    border: 0.5px solid;
+    border-color: black;
+}
+
+/*ancho de columnas*/
+table td:first-child {
+    width: 50%;
+}
+
+table td:nth-child(2) {
+    width: 50%;
+}
+
+table td:last-child {
+    width: 50%;
+}
+
+.boton1-cell{
+    border: none;
+}
+.boton1, .boton2{
+    border-color: white;
+    height: 3px;
+    width: 0;
+    background: #323945;
+    border-radius: 20px;
+    transition: 0.5s;
+    padding: 10px;
+}
+.boton1:hover, .boton2:hover{
+    background-color: #323945a9;
+ 
+}
+
+.b01, .b02{
+    text-decoration: none;
+    color: white;
+}
+
+/* Mensaje de confirmación */
+.mensaje .conf{
+    color: #323945;
+    margin-top: 250px;
+    font-family: Raleway;
+    font-size: 50px;
+}
+
+.mail{
+    color:#323945;
+    font-size: 150px;
+}
+
+
+
+/* Reserva sala----------------- */
+
+
+.salareserva_form {
+   
+    font-size: 20px;
+    color: #323945;
+    
+  
+}
+
+.salareserva_form .solicitante {
+    padding: 10px;
+}
+
+.salareserva_form .idsala {
+    padding: 10px;
+}
+
+.salareserva_form .horainicio {
+    padding: 10px;
+}
+
+
+.salareserva_form .horafinal {
+    padding: 10px;
+}
+
+.salareserva_form form input{
+    width: 20%;
+    padding: 0.5em;
+    border: none;
+    background: none;
+    outline: none;
+    padding-top: 20px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.salareserva_form .submit {
+    width: 450px;
+    background-color:#32394556;
+    border-radius: 10px;
+    cursor: pointer;
+    color:white;
+}
+
+/* Salasexistentes----------------- */
+
+.salaexistente_form .salas{
+    padding: 10px;
+   
+}
+
+.salaexistente_form .submit {
+    width: 450px;
+    background-color:#32394556;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+/*------Dashboard------- */
+
+.navegacion {
+    justify-content: space-between;
+    font-size: 40px;
+    width:60%;
+    margin: auto;
+    padding: 35px 0;
+}
+
+.navegacion ul a li{
+    list-style: none;
+    background-color: #323945;
+    border-radius: 25px;
+    box-shadow: #262b34;
+    width: 100%;
+    height: 100%;
+}
+.navegacion ul a{
+    width: 100px;
+    outline: none;
+    text-decoration: none;
+    color:white;
+    
+}
+
+.navegacion ul li:hover{
+    background-color: #323945a9;
+}
+
+.cerrar {
+    font-size: 20px;
+}
+
+.cerrar a{
+    outline: none;
+    text-decoration: none; 
+    color: black;
+    font-weight: bold;
+
+}
+
+.cerrarcal {
+    font-size: 20px;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.cerrarcal a{
+    outline: none;
+    text-decoration: none; 
+    color: black;
+    font-weight: bold;
+
+}
+
+
+/*checkbox */
+
+.checkbox{
+    font-size: 17px;
+    width: 450px;
+    height: 40px;
+    background-color: #323945;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    
+}
+.checkbox label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    min-width:200px ;
+}
+
+
+.checkbox .check{
+    cursor: pointer;
+}
+
+input[type=checkbox]{
+    transform: scale(1.5);
+}
+
+
+/* Elemento de Solicitudes.html */
+
+.solicitud{
+    padding-top: 80px;
+}
+
+
+.backdash{
+    width: 450px;
+    background-color:#323945;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 30px;
+
+}
+
+.backdash a{
+    color: white;
+    outline: none;
+    text-decoration: none;
+}
+
+.Dash{
+    text-decoration: none;
+    color: white;
+}
+
+/* usuario */
+.registrar {
+    width: 420px;
+    background-color: white;
+    border-radius: 10px;
+    color:#323945;
+    cursor: pointer;
+}
+
+/* Form Usuario */
+
+
+.userform {
+   
+    font-size: 20px;
+    color: #323945;
+    
+  
+}
+
+.userform .username {
+    padding: 10px;
+}
+
+.userform .password {
+    padding: 10px;
+}
+
+.userform .email {
+    padding: 10px;
+}
+
+
+.userform .rank {
+    padding: 10px;
+}
+
+.userform form input{
+    width: 20%;
+    padding: 0.5em;
+    border: none;
+    background: none;
+    outline: none;
+    padding-top: 20px;
+    justify-content: center;
+}
+
+
+.userform .submit {
+    width: 450px;
+    background-color:#32394556;
+    border-radius: 10px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.print {
+    cursor: pointer;
+    
+    
+}
+
+@media print {
+    .print {
+        display: none;
+    }
+}
+.submit:hover {
+    width: 450px;
+    background-color:#323945a9;
+    border-radius: 10px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hoverss:hover {
+    width: 420px;
+    background-color:#5d6b83a9;
+    border-radius: 10px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.hoverdash:hover {
+    width: 450px;
+    background-color: #323945a9;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 30px;
+  }

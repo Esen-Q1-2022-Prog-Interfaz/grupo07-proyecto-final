@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %}SOLICITUDES{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% block contents %}
+
+<center>
+<h2>{{day}}/{{month}}/{{year}}</h2>
+<h2>CREAR SOLICITUD</h2>
+<br>
+
+<div class="salareserva_form">
+    <form action="{{ url_for('admin.dayview', month = month, day=day, year=year) }}" method="post">
+        {{ form.hidden_tag() }}
+
+        <div class="solicitante">
+            {{ form.solicitante.label }}
+            {{ form.solicitante }}            
+        </div>
+
+        <div class="idsala">
+            {{ form.idSala.label }}
+            {{ form.idSala }} 
+        </div>
+       
+        <div class="horainicio">
+            {{ form.horaInicio.label }}
+            {{ form.horaInicio }}
+        </div>
+       
+        <div class="horafinal">
+            {{ form.horaFinal.label }}
+            {{ form.horaFinal }}
+        </div>
+        
+        <div class="submit">
+            {{ form.submit }}
+        </div>
+    </form>
+</div>
+
+
+<h2 class="solicitud">Solicitudes para este dia:</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Solicitante</th>
+            <th>ID de Sala</th>
+            <th>Hora de inicio</th>
+            <th>Hora de fin</th>
+            <th>¿Está aprobado?</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.solicitante }}</td>
+            <td>{{ item.idSala }}</td>
+            <td>{{ item.horaInicio }}</td>
+            <td>{{ item.horaFinal }}</td>
+            <td>{{ item.estado }}</td>
+            <td class="boton1-cell"><a class="b01 boton1" href="{{ url_for('solicitudes.aprobar', id=item.id) }}">Aprobar</a></td>
+            <td class="boton1-cell"><a class="b01 boton1" href="{{ url_for('solicitudes.rechazar', id=item.id) }}">Rechazar</a></td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+<div class="boton1-cell">
+    <a class="backdash Dash" href="{{ url_for('admin.dashboard') }}">Volver al Dashboard</a><br>
+</div>
+
+</center>
+{% endblock %}

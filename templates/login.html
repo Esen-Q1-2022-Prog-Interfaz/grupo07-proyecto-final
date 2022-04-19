@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}Inicio{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="https://kit.fontawesome.com/e7690f1b29.js" crossorigin="anonymous"></script>
+
+{% block contents %}
+
+<div class="login">
+    <center>
+        <div class="cuadrologin">
+            <h1>LOGIN</h1>
+            <div class="user">
+                <i class="e fa-solid fa-user"></i>
+            </div>
+
+        
+        </div>
+
+<!--Formulario de login-->
+
+<div class="log-in">
+    <div class="bloque">
+        <div class="login_form">
+            <br>
+            <form action="{{ url_for('auth.login') }}" method="post">
+                {{ form.hidden_tag() }}
+                    <div class="username">
+                        {{ form.username.label}}
+                        {{ form.username}}
+                    </div>
+                    
+    
+                    <div class="password">
+                        {{ form.password.label}}
+                        {{ form.password}}
+                    </div>
+
+                    <center>
+                        <div class="submit hoverss">
+                            {{ form.submit }}
+                        </div>
+                    </center>
+                
+            </form>
+            <br>
+        </div>
+
+        
+    </div>
+</center>
+</div>
+
+
+{% endblock %}

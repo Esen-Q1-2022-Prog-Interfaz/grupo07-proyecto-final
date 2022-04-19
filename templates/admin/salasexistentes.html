@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block contents %}
+
+<center>
+<h2>Salas</h2>
+
+<h2>Crear sala:</h2>
+<br>
+<div class="userform">
+    <form action="{{ url_for('salas.home') }}" method="post">
+        {{ form.hidden_tag() }}
+
+        <div class="username">
+            {{ form.sala.label }}
+            {{ form.sala }}
+        </div>
+    
+        <div class="submit">
+            {{ form.submit }}
+        </div>
+
+    </form>
+
+</div>
+
+<br>
+
+<h2>Salas existentes:</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Sala</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.sala }}</td>
+            <td class="boton1-cell"><a class="b01 boton1" href="{{ url_for('salas.delete', id=item.id)}}">Borrar</a></td>        
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+<br>
+<div class="boton1-cell">
+    <a class="Dash backdash hoverdash" href="{{ url_for('admin.dashboard') }}">Volver al Dashboard</a><br>
+</div>
+
+<br>
+
+<div class = "cerrar">
+    <a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a>
+</div>
+
+</center>
+
+
+{% endblock %}

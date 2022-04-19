@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}SOLICITUDES{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% block contents %}
+
+<center>
+<h2>Solicitudes</h2>
+
+<h2>Solicitudes existentes:</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Solicitante</th>
+            <th>ID de Sala</th>
+            <th>Fecha</th>
+            <th>Hora de inicio</th>
+            <th>Hora de fin</th>
+            <th>¿Está aprobado?</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.solicitante }}</td>
+            <td>{{ item.idSala }}</td>
+            <td>{{ item.fecha }}</td>
+            <td>{{ item.horaInicio }}</td>
+            <td>{{ item.horaFinal }}</td>
+            <td>{{ item.estado }}</td>
+            <td class="boton1-cell"><a class="b01 boton1" href="{{ url_for('solicitudes.aprobar', id=item.id) }}">Aprobar</a></td>
+            <td class="boton1-cell"><a class="b01 boton1" href="{{ url_for('solicitudes.rechazar', id=item.id) }}">Rechazar</a></td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+<div class="boton1-cell">
+    <a class="Dash backdash" href="{{ url_for('admin.dashboard') }}">Volver al Dashboard</a><br>
+</div>
+
+</center>
+
+
+{% endblock %}

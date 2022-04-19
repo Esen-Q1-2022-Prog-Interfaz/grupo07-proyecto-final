@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://kit.fontawesome.com/e7690f1b29.js" crossorigin="anonymous"></script>
+    <title>{%block title%}{%endblock %} </title>
+    {%block style%}{%endblock %}
+</head>
+<header>
+<div class="logos">
+    <div class="image">
+        <img class= "primera" src="{{ url_for('static', filename='./img/fantel.png') }}" alt="">
+    </div>
+    <div class="imagen2">
+        <img class="segunda" src="{{ url_for('static', filename='./img/logo_mined.png') }}" alt="">
+    </div>
+</div>  
+</header> 
+
+{%block contents %} 
+{% endblock %}
+
+
+</html>

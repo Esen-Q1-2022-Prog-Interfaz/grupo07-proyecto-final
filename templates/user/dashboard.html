@@ -1,0 +1,21 @@
+<!--PRIMERA PANTALLA DE USER CADA BOTON SE VA A SU HTML-->
+
+
+{% extends 'base.html' %}
+{% block title %}Usuario Panel de Control{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% block contents %}
+<h1>Menú</h1>
+<center>
+<div class = "navegacion">
+        <ul>
+                <a href="{{ url_for('usersalas.calendario') }}"><li>Solicitar nueva reserva</li></a><br>
+                <a href="{{ url_for('usersalas.misReservas', Id=current_user.username) }}"><li>Mis reservas</li></a><br>
+        </ul> 
+</div>
+
+<div class = "cerrar">
+        <a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a>
+</div>
+</center>
+{% endblock %}
